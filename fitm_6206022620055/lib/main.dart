@@ -1,115 +1,431 @@
 import 'package:flutter/material.dart';
+import 'welcome_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'FITM_6206022620055',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.lightBlue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: Form(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
+class Form extends StatefulWidget {
+  const Form({Key? key}) : super(key: key);
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  _FormState createState() => _FormState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+class _FormState extends State<Form> {
+  TextEditingController _name = TextEditingController();
+  TextEditingController _user = TextEditingController();
+  TextEditingController _pass = TextEditingController();
+  TextEditingController _conpass = TextEditingController();
+  TextEditingController _phone = TextEditingController();
+  TextEditingController _idp = TextEditingController();
+  TextEditingController _email = TextEditingController();
+  TextEditingController _dropdownValue = TextEditingController();
+  TextEditingController _grade = TextEditingController();
+  String dropdownValue = 'เลือกวุฒิการศึกษา';
+  String dropdownValue1 = 'เลือกโครงการที่ต้องการสมัคร';
+  String dropdownValue2 = 'เลือกสาขาวิชาที่ต้องการสมัครเรียน';
+  String dropdownValue3 = 'เลือกสาขาวิชาที่ต้องการสมัครเรียน';
+  String dropdownValue4 = 'เลือกสาขาวิชาที่ต้องการสมัครเรียน';
+  String dropdownValue5 = 'เลือกสาขาวิชาที่ต้องการสมัครเรียน';
+  String dropdownValue6 = 'เลือกสาขาวิชาที่ต้องการสมัครเรียน';
+  String dropdownValue7 = 'เลือกสาขาวิชาที่ต้องการสมัครเรียน';
+  String dropdownValue8 = 'เลือกสาขาวิชาที่ต้องการสมัครเรียน';
+  String dropdownValue9 = 'เลือกสาขาวิชาที่ต้องการสมัครเรียน';
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
+      backgroundColor: Color.fromRGBO(173, 216, 230, 1),
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Text('Computer SHOP'),
+        foregroundColor: Colors.white,
+        backgroundColor: Color.fromRGBO(173, 216, 230, 1),
+        elevation: 0,
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+      body: Container(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Image.asset(
+                "assets/images/FITM.png",
+                height: 100,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  controller: _name,
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(), labelText: 'ชื่อ-นามสกุล'),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  controller: _user,
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(), labelText: 'Username'),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  controller: _pass,
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(), labelText: 'Password'),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  controller: _conpass,
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Confirm Password'),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  controller: _idp,
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: "เลขบัตรประชาชน"),
+                  keyboardType: TextInputType.number,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  controller: _phone,
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(), labelText: 'เบอร์โทรศัพท์'),
+                  keyboardType: TextInputType.phone,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  controller: _email,
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(), labelText: 'E-mail'),
+                  keyboardType: TextInputType.emailAddress,
+                ),
+              ),
+              Text('วุฒิการศึกษา'),
+              DropdownButton<String>(
+                value: dropdownValue,
+                icon: const Icon(Icons.arrow_drop_down),
+                elevation: 16,
+                style: const TextStyle(color: Colors.black),
+                underline: Container(
+                  height: 2,
+                  color: Colors.black,
+                ),
+                onChanged: (String? newValue) {
+                  setState(() {
+                    dropdownValue = newValue!;
+                  });
+                },
+                items: <String>[
+                  'เลือกวุฒิการศึกษา',
+                  'ม.3',
+                  'ม.6',
+                  'ปวช.',
+                  'ปวส.',
+                  'ป.ตรี',
+                  'ป.โท'
+                ].map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  controller: _grade,
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(), labelText: 'เกรดเฉลี่ย'),
+                  keyboardType: TextInputType.number,
+                ),
+              ),
+              Text('โครงการที่ต้องการสมัคร'),
+              DropdownButton<String>(
+                value: dropdownValue1,
+                icon: const Icon(Icons.arrow_drop_down),
+                elevation: 16,
+                style: const TextStyle(color: Colors.black),
+                underline: Container(
+                  height: 2,
+                  color: Colors.black,
+                ),
+                onChanged: (String? newValue) {
+                  setState(() {
+                    dropdownValue1 = newValue!;
+                  });
+                },
+                items: <String>[
+                  'เลือกโครงการที่ต้องการสมัคร',
+                  'โครงการรับตรงสอบข้อเขียน',
+                  'โครงการโควตาพื้นที่',
+                  'โครงการ portfolio',
+                  'โครงการเรียนดี',
+                  'โครงการรับตรงใช้คะแนน GAT/PAT'
+                ].map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              ),
+              Text('ภาควิชาและสาขาวิชาที่ต้องการสมัครเรียน'),
+              Text('ภาควิชาเทคโนโลยีสารสนเทศ'),
+              Text('หลักสูตร 4 ปีรับ ม.6 ปวช.'),
+              DropdownButton<String>(
+                value: dropdownValue2,
+                icon: const Icon(Icons.arrow_drop_down),
+                elevation: 16,
+                style: const TextStyle(color: Colors.black),
+                underline: Container(
+                  height: 2,
+                  color: Colors.black,
+                ),
+                onChanged: (String? newValue) {
+                  setState(() {
+                    dropdownValue2 = newValue!;
+                  });
+                },
+                items: <String>[
+                  'เลือกสาขาวิชาที่ต้องการสมัครเรียน',
+                  'สาขาวิชาเทคโนโลยีสารสนเทศ (IT)',
+                  'สาขาวิชาวิศวกรรมสารสนเทศและเครือข่าย (INE)',
+                ].map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              ),
+              Text('หลักสูตร ต่อเนื่อง รับ ปวส.'),
+              DropdownButton<String>(
+                value: dropdownValue3,
+                icon: const Icon(Icons.arrow_drop_down),
+                elevation: 16,
+                style: const TextStyle(color: Colors.black),
+                underline: Container(
+                  height: 2,
+                  color: Colors.black,
+                ),
+                onChanged: (String? newValue) {
+                  setState(() {
+                    dropdownValue3 = newValue!;
+                  });
+                },
+                items: <String>[
+                  'เลือกสาขาวิชาที่ต้องการสมัครเรียน',
+                  'สาขาวิชาเทคโนโลยีสารสนเทศ (ITI)',
+                  'สาขาวิชาวิศวกรรมสารสนเทศและเครือข่าย (INET)',
+                ].map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              ),
+              Text('ภาควิชาการจัดการอุตสาหกรรม'),
+              Text('หลักสูตร 4 ปีรับ ม.6 ปวช.'),
+              DropdownButton<String>(
+                value: dropdownValue4,
+                icon: const Icon(Icons.arrow_drop_down),
+                elevation: 16,
+                style: const TextStyle(color: Colors.black),
+                underline: Container(
+                  height: 2,
+                  color: Colors.black,
+                ),
+                onChanged: (String? newValue) {
+                  setState(() {
+                    dropdownValue4 = newValue!;
+                  });
+                },
+                items: <String>[
+                  'เลือกสาขาวิชาที่ต้องการสมัครเรียน',
+                  'สาขาวิชาวิศวกรรมอุตสาหการและการจัดการ (IEM)',
+                  'สาขาวิชาเทคโนโลยีเครื่องกลและกระบวนการผลิต(MM)',
+                ].map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              ),
+              Text('หลักสูตร ต่อเนื่อง รับ ปวส.'),
+              DropdownButton<String>(
+                value: dropdownValue5,
+                icon: const Icon(Icons.arrow_drop_down),
+                elevation: 16,
+                style: const TextStyle(color: Colors.black),
+                underline: Container(
+                  height: 2,
+                  color: Colors.black,
+                ),
+                onChanged: (String? newValue) {
+                  setState(() {
+                    dropdownValue5 = newValue!;
+                  });
+                },
+                items: <String>[
+                  'เลือกสาขาวิชาที่ต้องการสมัครเรียน',
+                  'สาขาวิชาการจัดการอุตสาหกรรม (IMT)',
+                  'สาขาวิชาเทคโนโลยีเครื่องกลและกระบวนการผลิต(MMT)',
+                ].map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              ),
+              Text('ภาควิชาวิศวกรรมเกษตรเพื่ออุตสาหกรรม'),
+              Text('หลักสูตร 4 ปีรับ ม.6 ปวช.'),
+              DropdownButton<String>(
+                value: dropdownValue6,
+                icon: const Icon(Icons.arrow_drop_down),
+                elevation: 16,
+                style: const TextStyle(color: Colors.black),
+                underline: Container(
+                  height: 2,
+                  color: Colors.black,
+                ),
+                onChanged: (String? newValue) {
+                  setState(() {
+                    dropdownValue6 = newValue!;
+                  });
+                },
+                items: <String>[
+                  'เลือกสาขาวิชาที่ต้องการสมัครเรียน',
+                  'สาขาวิชาวิศวกรรมเกษตรและอาหาร (AFE)',
+                ].map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              ),
+              Text('หลักสูตร ต่อเนื่อง รับ ปวส.'),
+              DropdownButton<String>(
+                value: dropdownValue7,
+                icon: const Icon(Icons.arrow_drop_down),
+                elevation: 16,
+                style: const TextStyle(color: Colors.black),
+                underline: Container(
+                  height: 2,
+                  color: Colors.black,
+                ),
+                onChanged: (String? newValue) {
+                  setState(() {
+                    dropdownValue7 = newValue!;
+                  });
+                },
+                items: <String>[
+                  'เลือกสาขาวิชาที่ต้องการสมัครเรียน',
+                  'สาขาวิชาวิศวกรรมเกษตรและอาหาร (AFET)',
+                ].map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              ),
+              Text('ภาควิชาการออกแบบและบริหารงานก่อสร้าง'),
+              Text('หลักสูตร 4 ปีรับ ม.6 ปวช.'),
+              DropdownButton<String>(
+                value: dropdownValue8,
+                icon: const Icon(Icons.arrow_drop_down),
+                elevation: 16,
+                style: const TextStyle(color: Colors.black),
+                underline: Container(
+                  height: 2,
+                  color: Colors.black,
+                ),
+                onChanged: (String? newValue) {
+                  setState(() {
+                    dropdownValue8 = newValue!;
+                  });
+                },
+                items: <String>[
+                  'เลือกสาขาวิชาที่ต้องการสมัครเรียน',
+                  'สาขาวิชาคอมพิวเตอร์ช่วยออกแบบและบริหารงานก่อสร้าง (CA)',
+                ].map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              ),
+              Text('หลักสูตร ต่อเนื่อง รับ ปวส.'),
+              DropdownButton<String>(
+                value: dropdownValue9,
+                icon: const Icon(Icons.arrow_drop_down),
+                elevation: 16,
+                style: const TextStyle(color: Colors.black),
+                underline: Container(
+                  height: 2,
+                  color: Colors.black,
+                ),
+                onChanged: (String? newValue) {
+                  setState(() {
+                    dropdownValue9 = newValue!;
+                  });
+                },
+                items: <String>[
+                  'เลือกสาขาวิชาที่ต้องการสมัครเรียน',
+                  'สาขาวิชาคอมพิวเตอร์ช่วยออกแบบและบริหารงานก่อสร้าง (CDM)',
+                ].map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              ),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => WelcomePage(
+                          dropdownValue: _dropdownValue.text,
+                          name: _name.text,
+                          user: _user.text,
+                          pass: _pass.text,
+                          conpass: _conpass.text,
+                          idp: _idp.text,
+                          phone: _phone.text,
+                          email: _email.text,
+                          grade: _grade.text,
+                        ),
+                      ),
+                    );
+                  },
+                  child: Text('สมัครเรียน'))
+            ],
+          ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
